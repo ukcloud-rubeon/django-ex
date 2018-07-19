@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Welcome to OpenShift</title>
+  <title>Welcome to Eric's OpenShift!</title>
 
 
 <style>
@@ -215,6 +215,13 @@ pre {
             <h1>Welcome to your Django application on OpenShift</h1>
           </hgroup>
 
+                <h2>Request information</h2>
+<pre>
+Server hostname: {{ hostname }}
+Database server: {{ database.engine }} ({{ database.url }})
+{% if database.is_sqlite %}<span class="warning">Data persistence warning: You are currently using SQLite. This is fine for development, but your data won't be persisted across application deployments.</span>{% endif %}
+Page views: {{ count }}
+</pre>
 
         <div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
@@ -299,13 +306,6 @@ $ git push</pre>
                     <li><a href="http://git-scm.com/documentation">Git documentation</a></li>
                   </ul>
 
-                <h2>Request information</h2>
-<pre>
-Server hostname: {{ hostname }}
-Database server: {{ database.engine }} ({{ database.url }})
-{% if database.is_sqlite %}<span class="warning">Data persistence warning: You are currently using SQLite. This is fine for development, but your data won't be persisted across application deployments.</span>{% endif %}
-Page views: {{ count }}
-</pre>
 
           </section>
         </div>
